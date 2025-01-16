@@ -1,13 +1,19 @@
 <?php
 // Création de la chaîne
-$str = "Certaines choses changent, et d'autres ne changeront jamais.";
+$str = "Les choses que l'on Possède finissent par nous posséder.";
 
-// Vérification que la chaîne n'est pas vide
-if (strlen($str) > 0) {
-    // On déplace chaque caractère vers la gauche
-    $nouvelleStr = substr($str, 1) . $str[0];
-    
-    // Affichage du résultat
-    echo $nouvelleStr;
+// Algorithme pour inverser la chaîne
+$strInverse = "";
+$i = 0;
+while (isset($str[$i])) { // l'indice existe dans la chaîne
+    $i++;
 }
+
+while ($i > 0) { 
+    $i--;
+    $strInverse .= $str[$i]; 
+}
+
+// chaîne inversée
+echo $strInverse;
 ?>
