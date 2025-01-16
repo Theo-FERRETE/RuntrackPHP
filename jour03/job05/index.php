@@ -5,25 +5,39 @@ $str = "On n est pas le meilleur quand on le croit mais quand on le sait";
 // Définition des voyelles
 $voyelles = "aeiouyAEIOUY";
 
-// Initialisation du dictionnaire
+// compteur des voyelles et consonnes
 $dic = [
     "voyelles" => 0,
     "consonnes" => 0
 ];
 
-// Parcours de la chaîne
-for ($i = 0; $i < strlen($str); $i++) {
+// Parcours de la chaîne 
+$i = 0;
+while (isset($str[$i])) {
     $char = $str[$i];
     if (ctype_alpha($char)) { // Vérifie si c'est une lettre
-        if (strpos($voyelles, $char) !== false) {
+        // Parcours des voyelles 
+        $j = 0;
+        $isVoyelle = false;
+        while (isset($voyelles[$j])) {
+            if ($char === $voyelles[$j]) {
+                $isVoyelle = true;
+                break;
+            }
+            $j++;
+        }
+
+        // Mise à jour 
+        if ($isVoyelle) {
             $dic["voyelles"]++;
         } else {
             $dic["consonnes"]++;
         }
     }
+    $i++;
 }
 
-// Affichage des résultats dans un tableau HTML
+// Affichage tableau HTML
 echo "<table border='1'>";
 echo "<thead><tr><th>Voyelles</th><th>Consonnes</th></tr></thead>";
 echo "<tbody>";
