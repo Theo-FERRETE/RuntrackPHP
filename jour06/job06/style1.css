@@ -1,0 +1,19 @@
+body {
+    background-color: #f0f8ff; 
+    font-family: Arial, sans-serif;
+    color: #000080; 
+}
+form {
+    border: 2px solid #000080;
+    padding: 20px;
+    background-color: #e6f7ff;
+    border-radius: 10px;
+}
+button {
+    background-color: #000080;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
